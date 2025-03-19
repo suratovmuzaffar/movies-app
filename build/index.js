@@ -1,5 +1,5 @@
 // src/index.ts
-var src_default = undefined;
-export {
-  src_default as default
-};
+var params = new URLSearchParams(window.location.search);
+console.log(params.get("log-email"));
+console.log(params.get("log-email"));
+console.log(params.get("log-email"));
