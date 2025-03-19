@@ -5,7 +5,9 @@
   "scripts": {
     "dev:tailwind": "bunx tailwindcss -i ./src/tailwind.css -o ./build/index.css --watch",
     "dev:ts": "bun build --watch --outfile=./build/index.js ./src/index.ts",
-    "dev": "concurrently \"bun dev:tailwind\" \"bun dev:ts\""
+    "dev:ts2": "bun build --watch --outfile=./build/login.js ./src/login.ts",
+    "dev:ts3": "bun build --watch --outfile=./build/register.js ./src/register.ts",
+    "dev": "concurrently \"bun dev:tailwind\" \"bun dev:ts\" \"bun dev:ts2\" \"bun dev:ts3\""
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.0.3",
