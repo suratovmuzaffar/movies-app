@@ -28,7 +28,7 @@
               >Register</a
             >
           </li>
-          <li class="ml-[83vw]">
+          <li class="ml-[76vw]">
             <a
               href="./index.html"
               class="text-gray-900 block hover:text-blue-700"
@@ -38,35 +38,59 @@
         </ul>
       </div>
     </nav>
-    <section>
-      <div class="flex flex-col rounded-md w-[250px] shadow-xs">
+    <div class="flex h-[90vh] w-[100%]">
+      <section class="flex flex-col h-[100%] w-[7%]">
         <a
           href="#"
-          aria-current="page"
-          class="px-4 py-2 text-sm font-medium bg-white border border-gray-200 rounded-t-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-white focus:bg-blue-700"
+          class="flex bg-white border border-gray-200 border-t-0 h-[25%] text-gray-900 text-sm focus:bg-black focus:ring-2 focus:ring-white focus:text-white focus:z-10 font-medium hover:bg-gray-100 hover:text-gray-600 items-center px-4 py-2"
         >
           All Genres
         </a>
         <a
           href="#"
-          class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-white focus:bg-blue-700"
-        >
-          Action
-        </a>
-        <a
-          href="#"
-          class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-white focus:bg-blue-700"
+          class="flex bg-white border border-gray-200 h-[25%] text-gray-900 text-sm focus:bg-black focus:ring-2 focus:ring-white focus:text-white focus:z-10 font-medium hover:bg-gray-100 hover:text-gray-600 items-center px-4 py-2"
         >
           Comedy
         </a>
         <a
           href="#"
-          class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-b-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-white focus:bg-blue-700"
+          class="flex bg-white border border-gray-200 h-[25%] text-gray-900 text-sm focus:bg-black focus:ring-2 focus:ring-white focus:text-white focus:z-10 font-medium hover:bg-gray-100 hover:text-gray-600 items-center px-4 py-2"
         >
           Thriller
         </a>
-      </div>
-    </section>
+        <a
+          href="#"
+          class="flex bg-white border border-gray-200 h-[25%] text-gray-900 text-sm focus:bg-black focus:ring-2 focus:ring-white focus:text-white focus:z-10 font-medium hover:bg-gray-100 hover:text-gray-600 items-center px-4 py-2"
+        >
+          Thriller
+        </a>
+      </section>
+      <section class="h-[25%] px-3 pt-3 w-[100%]">
+        <form action="">
+          <div class="mb-2">
+            <input
+              type="text"
+              placeholder="Search..."
+              id="search"
+              name="search"
+              class="bg-gray-50 border border-gray-300 p-2.5 rounded-lg text-gray-900 text-sm w-[100%] block focus:border-black focus:ring-black"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            id="submit"
+            name="submit"
+            class="bg-black rounded-lg text-[18px] text-center text-sm text-white w-full dark:bg-gray-500 dark:focus:ring-white dark:hover:bg-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-600 font-medium hover:bg-gray-700 px-5 py-2.5 sm:w-auto"
+          >
+            Login
+          </button>
+        </form>
+        <div class="bg-gray-600 p-[10px] rounded-sm text-white mt-2">
+          SHOWING 0 MOVIES IN THE DATABASE
+        </div>
+      </section>
+    </div>
 
     <script src="../build/index.js"></script>
   </body>
