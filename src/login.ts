@@ -1,28 +1,60 @@
 const params = new URLSearchParams(window.location.search);
 
-const regpeople = JSON.parse(localStorage.getItem("regpeople") || "[]");
-regpeople.push({
-  username: params.get("reg-username"),
-  email: params.get("reg-email"),
-  password: params.get("reg-password"),
-});
-console.log(regpeople);
+// Foydalanuvchi interfeysi
+interface User {
+  username: string;
+  email: string;
+  password: string;
+}
 
-localStorage.setItem("regpeople", JSON.stringify(regpeople));
+// Ro‘yxatdan o‘tish ma’lumotlarini olish
+const regUsername: string | null = params.get("reg-username");
+const regEmail: string | null = params.get("reg-email");
+const regPassword: string | null = params.get("reg-password");
 
-let logpeople = {
-  email: params.get("log-email"),
-  password: params.get("log-password"),
-};
-console.log(logpeople);
+//
+let localarray = [];
+localarray = JSON.parse(localStorage.getItem("regpeople") || "[]");
 
-for (let i = 0; i < regpeople.length; i++) {
-  if (
-    regpeople[i].email === logpeople.email &&
-    regpeople[i].password === logpeople.password
-  ) {
+// Agar foydalanuvchi ro‘yxatdan o‘tsa, uni saqlaymiz
+if (regUsername && regEmail && regPassword) {
+  const newUser: User = {
+    username: regUsername,
+    email: regEmail,
+    password: regPassword,
+  };
+  // Yangi foydalanuvchini massivga qo‘shish va LocalStorage'ga yozish
+
+  localarray.push(newUser);
+  localStorage.setItem("regpeople", JSON.stringify(localarray));
+}
+// LocalStorage'dan foydalanuvchilarni olish
+const storedUsers: User[] = JSON.parse(
+  localStorage.getItem("regpeople") || "[]"
+);
+console.log("Registered Users:", localarray);
+
+// Kirish (login) ma'lumotlarini olish
+const logEmail: string | null = params.get("log-email");
+const logPassword: string | null = params.get("log-password");
+
+// Agar login ma'lumotlari mavjud bo‘lsa, foydalanuvchini tekshiramiz
+if (logEmail && logPassword) {
+  let user: User | undefined = storedUsers.find(
+    (u) => u.email === logEmail && u.password === logPassword
+  );
+
+  if (user) {
     document
-      .querySelector("#login-form")
-      ?.setAttribute("action", "./index.html");
+      .querySelector<HTMLFormElement>("#login-form")
+      ?.setAttribute("action", "./movies.html");
+    const loginemail: HTMLFormElement = document.querySelector("#email")!; // Elementni olish
+    loginemail.value = `${logEmail}`;
+    const loginpassword: HTMLFormElement = document.querySelector("#password")!; // Elementni olish
+    loginpassword.value = `${logPassword}`;
+    const loginbtn: HTMLFormElement = document.querySelector("#login-btn")!;
+    loginbtn.click();
+  } else {
+    console.log("Login failed: User not found");
   }
 }

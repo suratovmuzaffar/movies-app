@@ -1,20 +1,34 @@
 // src/login.ts
 var params = new URLSearchParams(window.location.search);
-var regpeople = JSON.parse(localStorage.getItem("regpeople") || "[]");
-regpeople.push({
-  username: params.get("reg-username"),
-  email: params.get("reg-email"),
-  password: params.get("reg-password")
-});
-console.log(regpeople);
-localStorage.setItem("regpeople", JSON.stringify(regpeople));
-var logpeople = {
-  email: params.get("log-email"),
-  password: params.get("log-password")
-};
-console.log(logpeople);
-for (let i = 0;i < regpeople.length; i++) {
-  if (regpeople[i].email === logpeople.email && regpeople[i].password === logpeople.password) {
-    document.querySelector("#login-form")?.setAttribute("action", "./index.html");
+var regUsername = params.get("reg-username");
+var regEmail = params.get("reg-email");
+var regPassword = params.get("reg-password");
+var localarray = [];
+localarray = JSON.parse(localStorage.getItem("regpeople") || "[]");
+if (regUsername && regEmail && regPassword) {
+  const newUser = {
+    username: regUsername,
+    email: regEmail,
+    password: regPassword
+  };
+  localarray.push(newUser);
+  localStorage.setItem("regpeople", JSON.stringify(localarray));
+}
+var storedUsers = JSON.parse(localStorage.getItem("regpeople") || "[]");
+console.log("Registered Users:", localarray);
+var logEmail = params.get("log-email");
+var logPassword = params.get("log-password");
+if (logEmail && logPassword) {
+  let user = storedUsers.find((u) => u.email === logEmail && u.password === logPassword);
+  if (user) {
+    document.querySelector("#login-form")?.setAttribute("action", "./movies.html");
+    const loginemail = document.querySelector("#email");
+    loginemail.value = `${logEmail}`;
+    const loginpassword = document.querySelector("#password");
+    loginpassword.value = `${logPassword}`;
+    const loginbtn = document.querySelector("#login-btn");
+    loginbtn.click();
+  } else {
+    console.log("Login failed: User not found");
   }
 }
