@@ -1,49 +1,47 @@
 const params = new URLSearchParams(window.location.search);
 
-// Foydalanuvchi interfeysi
+// type yani obyect uchun ishlatish uchun type
 interface User {
   username: string;
   email: string;
   password: string;
 }
 
-// Ro‘yxatdan o‘tish ma’lumotlarini olish
+// registerdan olingan qiymatlar
 const regUsername: string | null = params.get("reg-username");
 const regEmail: string | null = params.get("reg-email");
 const regPassword: string | null = params.get("reg-password");
 
-//
+// local storega malumotlarni local arrayga kochirib olish
 let localarray = [];
 localarray = JSON.parse(localStorage.getItem("regpeople") || "[]");
 
-// Agar foydalanuvchi ro‘yxatdan o‘tsa, uni saqlaymiz
+// agar qiymatlar bosh bolmasa obyectga saqlaymiz
 if (regUsername && regEmail && regPassword) {
   const newUser: User = {
     username: regUsername,
     email: regEmail,
     password: regPassword,
   };
-  // Yangi foydalanuvchini massivga qo‘shish va LocalStorage'ga yozish
+  // foydalanuvchi malumot jonatganda uni localstorega jonatamiz
 
   localarray.push(newUser);
   localStorage.setItem("regpeople", JSON.stringify(localarray));
 }
-// LocalStorage'dan foydalanuvchilarni olish
-const storedUsers: User[] = JSON.parse(
-  localStorage.getItem("regpeople") || "[]"
-);
-console.log("Registered Users:", localarray);
-
-// Kirish (login) ma'lumotlarini olish
+// localarrayni yangilab olish
+localarray = JSON.parse(localStorage.getItem("regpeople") || "[]");
+console.log(localarray);
+// login dan kiritilgan malumotlarni qabul qilish
 const logEmail: string | null = params.get("log-email");
 const logPassword: string | null = params.get("log-password");
 
-// Agar login ma'lumotlari mavjud bo‘lsa, foydalanuvchini tekshiramiz
+//log emeil bor yoqligini tekshiramiz
 if (logEmail && logPassword) {
-  let user: User | undefined = storedUsers.find(
-    (u) => u.email === logEmail && u.password === logPassword
+  //local arraydan qidiramiz belgilangan emeil parolni agar topilsa qiymat yani true topilmasa underfined qaytadi va false boladi va userga saqlanadi
+  let user: User | undefined = localarray.find(
+    (u: User) => u.email === logEmail && u.password === logPassword
   );
-
+  // userga qaraladi agar true bolsa formga yol korsatiladi va qaytadan ishlaydi codelar chunki login malumotlari yuklanmagan boladi
   if (user) {
     document
       .querySelector<HTMLFormElement>("#login-form")
@@ -54,7 +52,9 @@ if (logEmail && logPassword) {
     loginpassword.value = `${logPassword}`;
     const loginbtn: HTMLFormElement = document.querySelector("#login-btn")!;
     loginbtn.click();
-  } else {
-    console.log("Login failed: User not found");
+  }
+  //agar notogri bolsa alert chiqadi
+  else {
+    window.alert("Login failed: User not found");
   }
 }

@@ -14,12 +14,12 @@ if (regUsername && regEmail && regPassword) {
   localarray.push(newUser);
   localStorage.setItem("regpeople", JSON.stringify(localarray));
 }
-var storedUsers = JSON.parse(localStorage.getItem("regpeople") || "[]");
-console.log("Registered Users:", localarray);
+localarray = JSON.parse(localStorage.getItem("regpeople") || "[]");
+console.log(localarray);
 var logEmail = params.get("log-email");
 var logPassword = params.get("log-password");
 if (logEmail && logPassword) {
-  let user = storedUsers.find((u) => u.email === logEmail && u.password === logPassword);
+  let user = localarray.find((u) => u.email === logEmail && u.password === logPassword);
   if (user) {
     document.querySelector("#login-form")?.setAttribute("action", "./movies.html");
     const loginemail = document.querySelector("#email");
@@ -29,6 +29,6 @@ if (logEmail && logPassword) {
     const loginbtn = document.querySelector("#login-btn");
     loginbtn.click();
   } else {
-    console.log("Login failed: User not found");
+    window.alert("Login failed: User not found");
   }
 }
