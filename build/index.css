@@ -596,6 +596,15 @@
   .h-\[1vh\] {
     height: 1vh;
   }
+  .h-\[20vh\] {
+    height: 20vh;
+  }
+  .h-\[25\%\] {
+    height: 25%;
+  }
+  .h-\[26\%\] {
+    height: 26%;
+  }
   .h-\[30vh\] {
     height: 30vh;
   }
@@ -608,17 +617,17 @@
   .h-\[5vh\] {
     height: 5vh;
   }
-  .h-\[20vh\] {
-    height: 20vh;
-  }
-  .h-\[25\%\] {
-    height: 25%;
-  }
-  .h-\[26\%\] {
-    height: 26%;
-  }
   .h-\[70vh\] {
     height: 70vh;
+  }
+  .h-\[100vh\] {
+    height: 100vh;
+  }
+  .h-\[10vh\] {
+    height: 10vh;
+  }
+  .h-\[60vh\] {
+    height: 60vh;
   }
   .h-\[80vh\] {
     height: 80vh;
@@ -629,17 +638,8 @@
   .h-\[100\%\] {
     height: 100%;
   }
-  .h-\[100vh\] {
-    height: 100vh;
-  }
   .h-\[100wh\] {
     height: 100wh;
-  }
-  .h-\[10vh\] {
-    height: 10vh;
-  }
-  .h-\[60vh\] {
-    height: 60vh;
   }
   .w-\[5\%\] {
     width: 5%;
@@ -982,6 +982,9 @@
   }
   .text-gray-500 {
     color: var(--color-gray-500);
+  }
+  .text-gray-600 {
+    color: var(--color-gray-600);
   }
   .text-gray-700 {
     color: var(--color-gray-700);
