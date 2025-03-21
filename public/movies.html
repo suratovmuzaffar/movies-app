@@ -42,7 +42,7 @@
       <section class="flex flex-col h-[100%] w-[7%]">
         <a
           href="#"
-          class="flex bg-white border border-gray-200 border-t-0 h-[25%] text-gray-900 text-sm focus:bg-black focus:ring-2 focus:ring-white focus:text-white focus:z-10 font-medium hover:bg-gray-100 hover:text-gray-600 items-center px-4 py-2"
+          class="flex bg-gray-100 border border-gray-200 h-[25%] text-gray-900 text-sm focus:bg-black focus:ring-2 focus:ring-white focus:text-white focus:z-10 font-medium hover:bg-gray-100 hover:text-gray-600 items-center px-4 py-2"
         >
           All Genres
         </a>
@@ -54,7 +54,7 @@
         </a>
         <a
           href="#"
-          class="flex bg-white border border-gray-200 h-[25%] text-gray-900 text-sm focus:bg-black focus:ring-2 focus:ring-white focus:text-white focus:z-10 font-medium hover:bg-gray-100 hover:text-gray-600 items-center px-4 py-2"
+          class="flex bg-gray-100 border border-gray-200 h-[25%] text-gray-900 text-sm focus:bg-black focus:ring-2 focus:ring-white focus:text-white focus:z-10 font-medium hover:bg-gray-100 hover:text-gray-600 items-center px-4 py-2"
         >
           Thriller
         </a>
@@ -65,29 +65,65 @@
           Thriller
         </a>
       </section>
-      <section class="border-b-2 border-gray-200 h-[25%] w-[100%] pt-3 px-3">
-        <form action="">
-          <div class="mb-2">
-            <input
-              type="text"
-              placeholder="Search..."
-              id="search"
-              name="search"
-              class="bg-gray-50 border border-gray-300 p-2.5 rounded-lg text-gray-900 text-sm w-[100%] block focus:border-black focus:ring-black"
-              required
-            />
+      <section class="w-[100%]">
+        <div class="border-b-1 border-gray-200 h-[25%] w-[100%] pt-3 px-3">
+          <form action="">
+            <div class="mb-2">
+              <input
+                type="text"
+                placeholder="Search..."
+                id="search"
+                name="search"
+                class="bg-gray-50 border border-gray-300 p-2.5 rounded-lg text-gray-900 text-sm w-[100%] block focus:border-black focus:ring-black"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              id="submit"
+              name="submit"
+              class="bg-black rounded-lg text-[18px] text-center text-sm text-white w-full dark:bg-gray-500 dark:focus:ring-white dark:hover:bg-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-600 font-medium hover:bg-gray-700 px-5 py-2.5 sm:w-auto"
+            >
+              Login
+            </button>
+          </form>
+          <div class="bg-gray-300 p-[10px] rounded-sm text-white mt-2">
+            SHOWING 0 MOVIES IN THE DATABASE
           </div>
-          <button
-            type="submit"
-            id="submit"
-            name="submit"
-            class="bg-black rounded-lg text-[18px] text-center text-sm text-white w-full dark:bg-gray-500 dark:focus:ring-white dark:hover:bg-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-600 font-medium hover:bg-gray-700 px-5 py-2.5 sm:w-auto"
+        </div>
+        <div
+          class="w-[100%] h-[10vh] border-y-gray-200 border-y-1 grid grid-cols-6"
+        >
+          <div
+            class="w-full h-[100%] border-gray-200 border-1 flex items-center justify-center text-gray-700 bg-gray-300"
           >
-            Login
-          </button>
-        </form>
-        <div class="bg-gray-600 p-[10px] rounded-sm text-white mt-2">
-          SHOWING 0 MOVIES IN THE DATABASE
+            Title
+          </div>
+          <div
+            class="w-full h-[100%] border-gray-200 border-1 flex items-center justify-center text-gray-700 bg-gray-200"
+          >
+            Genre
+          </div>
+          <div
+            class="w-full h-[100%] border-gray-200 border-1 flex items-center justify-center text-gray-700 bg-gray-300"
+          >
+            Stock
+          </div>
+          <div
+            class="w-full h-[100%] border-gray-200 border-1 flex items-center justify-center text-gray-700 bg-gray-200"
+          >
+            Rate
+          </div>
+          <div
+            class="w-full h-[100%] border-gray-200 border-1 flex items-center justify-center text-gray-700 bg-gray-300"
+          >
+            Like
+          </div>
+          <div
+            class="w-full h-[100%] border-gray-200 border-1 flex items-center justify-center text-gray-700 bg-gray-200"
+          >
+            Delete
+          </div>
         </div>
       </section>
     </div>
