@@ -8,7 +8,8 @@
     "dev:ts2": "bun build --watch --outfile=./build/login.js ./src/login.ts",
     "dev:ts3": "bun build --watch --outfile=./build/register.js ./src/register.ts",
     "dev:ts4": "bun build --watch --outfile=./build/movies.js ./src/movies.ts",
-    "dev": "concurrently \"bun dev:tailwind\" \"bun dev:ts\" \"bun dev:ts2\" \"bun dev:ts3\" \"bun dev:ts4\""
+    "dev:ts5": "bun build --watch --outfile=./build/new-movie.js ./src/new-movie.ts",
+    "dev": "concurrently \"bun dev:tailwind\" \"bun dev:ts\" \"bun dev:ts2\" \"bun dev:ts3\" \"bun dev:ts4\" \"bun dev:ts5\""
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.0.3",
