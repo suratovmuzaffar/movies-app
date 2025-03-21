@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../build/index.css" />
     <link rel="webside icon" href="./icon.webp" />
-    <title>GRAY MOVIES | REGISTER</title>
+    <title>GRAY MOVIES | NEW-MOVIE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <nav class="bg-gray-100 border-b-gray-400">
@@ -22,74 +23,98 @@
             >
           </li>
           <li>
-            <a href="#" class="text-gray-900 block hover:text-blue-700"
+            <a
+              href="./register.html"
+              class="text-gray-900 block hover:text-blue-700"
               >Register</a
+            >
+          </li>
+          <li>
+            <a
+              href="./movies.html"
+              class="text-gray-900 block hover:text-blue-700"
+              >Movies</a
+            >
+          </li>
+          <li class="ml-[76vw]">
+            <a
+              href="./index.html"
+              class="text-gray-900 block hover:text-blue-700"
+              >Logout</a
             >
           </li>
         </ul>
       </div>
     </nav>
     <form
-      id="register-form"
+      id="new-movie-form"
       class="max-w-[450px] mx-auto"
       method="get"
-      action="./login.html"
+      action="./movies.html"
     >
       <h1
         class="text-4xl text-gray-900 block font-medium mb-2 mt-[30px] py-[10px]"
       >
-        Register
+        New-Movie
       </h1>
       <div class="mb-5">
-        <label
-          for="username"
-          class="text-gray-900 text-sm block font-medium mb-2"
-          >Username</label
+        <label for="title" class="text-gray-900 text-sm block font-medium mb-2"
+          >Title</label
         >
         <input
           type="text"
-          id="username"
-          name="reg-username"
+          id="title"
+          name="title"
           class="bg-gray-50 border border-gray-300 p-2.5 rounded-lg text-gray-900 text-sm w-[700px] block focus:border-blue-500 focus:ring-blue-500"
           required
         />
       </div>
 
       <div class="mb-5">
-        <label for="email" class="text-gray-900 text-sm block font-medium mb-2"
-          >Email</label
+        <label for="genre" class="text-gray-900 text-sm block font-medium mb-2"
+          >Genre</label
         >
         <input
-          type="email"
-          id="email"
-          name="reg-email"
+          type="text"
+          id="genre"
+          name="genre"
           class="bg-gray-50 border border-gray-300 p-2.5 rounded-lg text-gray-900 text-sm w-[700px] block focus:border-blue-500 focus:ring-blue-500"
           required
         />
       </div>
       <div class="mb-5">
-        <label
-          for="password"
-          class="text-gray-900 text-sm block font-medium mb-2"
-          >Password</label
+        <label for="stock" class="text-gray-900 text-sm block font-medium mb-2"
+          >Stock</label
         >
         <input
-          type="password"
-          id="password"
-          name="reg-password"
+          type="text"
+          id="stock"
+          name="stock"
+          class="bg-gray-50 border border-gray-300 p-2.5 rounded-lg text-gray-900 text-sm w-[700px] block focus:border-blue-500 focus:ring-blue-500"
+          required
+        />
+      </div>
+      <div class="mb-5">
+        <label for="rate" class="text-gray-900 text-sm block font-medium mb-2"
+          >Rate</label
+        >
+        <input
+          type="text"
+          id="rate"
+          name="rate"
           class="bg-gray-50 border border-gray-300 p-2.5 rounded-lg text-gray-900 text-sm w-[700px] block focus:border-blue-500 focus:ring-blue-500"
           required
         />
       </div>
       <button
         type="submit"
-        id="register-btn"
-        name="reg-submit"
+        id="add-btn"
+        name="add-submit"
         class="bg-blue-700 rounded-lg text-[18px] text-center text-sm text-white w-full dark:bg-blue-200 dark:focus:ring-blue-800 dark:hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium hover:bg-blue-800 px-5 py-2.5 sm:w-auto"
       >
-        Register
+        Add
       </button>
     </form>
   </body>
-  <script src="../build/register.js"></script>
+  <script src="../build/index.js"></script>
 </html>
